@@ -1,6 +1,7 @@
 let main = document.getElementById("main");
 
-const api = "https://movie-fake-server.herokuapp.com/data ";
+// Getting all data in page
+const api = "https://movie-fake-server.herokuapp.com/data";
 try {
   fetch(api)
     .then((response) => response.json())
@@ -12,31 +13,35 @@ try {
   console.log(err);
 }
 
+
+// Appendind data on body
 const appendData = (arr) => {
   main.innerHTML = "";
   arr.map((e) => {
     let div = document.createElement("div");
+    div.setAttribute("id", "content");
 
     let img = document.createElement("img");
     img.src = e.image_url;
 
     let genre = document.createElement("p");
-    genre.innerText = e.genre;
+    genre.innerText = `Genre: ${e.genre}`;
 
     let rating = document.createElement("p");
-    rating.innerText = e.rating;
+    rating.innerText = `Rating: ${e.rating}`;
 
     let movie_name = document.createElement("p");
-    movie_name.innerText = e.movie_name;
+    movie_name.innerText = `Name: ${e.movie_name}`;
 
     let release_date = document.createElement("p");
-    release_date.innerText = e.release_date;
+    release_date.innerText = `Release Date: ${e.release_date}`;
 
     div.append(img, movie_name, genre, rating, release_date);
     main.append(div);
   });
 };
 
+// Sort by Rating 
 function sortRating() {
   let selected = document.getElementById("sortRating").value;
 
@@ -58,6 +63,8 @@ function sortRating() {
     console.log(err);
   }
 }
+
+// Sort by Date
 function sortbyDate() {
   let selected = document.getElementById("sortbyDate").value;
 
@@ -82,6 +89,7 @@ function sortbyDate() {
   }
 }
 
+// Filtering Genre
 function filterGenre() {
   let selected = document.getElementById("filterGenre").value;
   try {

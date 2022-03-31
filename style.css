@@ -1,52 +1,74 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 #main {
-    width: 90%;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(4, auto);
-    justify-content: space-between;
-    row-gap: 2%;
-    margin-top: 5%;
-  }
-  
-  #main > div {
-      border: 1px solid red;
-      height: 100%;
-      padding: 5px 10px;
-      position: relative;
-      z-index: -1;
-  }
-  
-  div p {
-    max-width: 250px;
-  }
-  
-  div p:nth-last-child(1) {
-    position: absolute;
-    bottom: -10px;
-  }
-  
-  nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 5vh;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    background-color: #242526;
-  }
-  
-  #sortRating,
-  #filterGenre,
-  #sortbyDate {
-    outline: none;
-    background-color: #242526;
-    color: #fff;
-    font-size: 18px;
-  }
-  
-  
-  #sortRating option{
-      color: rgba(255, 255, 255, 0.76);
-  }
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  justify-content: space-between;
+  row-gap: 50px;
+  margin-top: 5%;
+}
+
+#main > div {
+  box-shadow: 0 0 10px rgb(126, 123, 123);
+  height: 58vh;
+  padding: 5px;
+  position: relative;
+  z-index: -1;
+  border-radius: 5px;
+}
+
+div p {
+  max-width: 250px;
+  font-weight: bold;
+  line-height: 1.5;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+div p:nth-child(2) {
+ background-color: #242526;
+ color: #fff
+}
+div p:nth-last-child(1) {
+  position: absolute;
+  bottom:0;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background-color: #242526;
+}
+
+#sortRating,
+#filterGenre,
+#sortbyDate {
+  outline: none;
+  background-color: #242526;
+  color: #fff;
+  font-size: 18px;
+}
+
+#sortRating option {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+
+footer h1{
+  text-align: center;
+  margin-top: 50px;
+}
